@@ -17,6 +17,9 @@
         --accent-hover: #04567c;
         --text-main: #041221;
         --text-muted: #24272a;
+        p {
+            color: var(--text-main)!important;
+        }
     }
 }
 
@@ -66,7 +69,8 @@ li,ul {
 
 .nav-link {
     /* color: var(--text-main) !important; */
-    font-weight: 600;
+     font-family:Arial;
+     font-size:18px;
     margin-left: 1rem;
     position: relative;
 }
@@ -268,18 +272,17 @@ li,ul {
 
 .card-content-layout {
     display: flex;
-    flex-direction: row; /* Ensure title and copy are side-by-side */
+    flex-direction: row; 
     gap: 1rem;
     position: absolute;
     top: var(--corner-size);
     left: var(--corner-size);
     height: calc(100% - 4rem);
     width: var(--content-width);
-    /* Start slightly shifted right to hide the P tag initially */
     transform: translateX(2rem); 
     transition: transform 450ms ease;
     pointer-events: none;
-    opacity: 0; /* Hide when closed */
+    opacity: 0; 
 }
 
 .card-copy {
@@ -287,7 +290,7 @@ li,ul {
     flex-direction: column;
     gap: 0.5rem;
     color: var(--text-main);
-    padding-right: 2rem; /* Give space for the text */
+    padding-right: 2rem; 
 }
 .card-copy h2 { font-size: 1.5rem; text-transform: uppercase; color: var(--accent); margin-bottom: 0; font-family: 'DM Sans', sans-serif; font-weight: 700; }
 .card-copy h3 { font-size: 0.85rem; font-family: 'Noto Serif', sans-serif; color: var(--text-muted); }
@@ -408,7 +411,11 @@ li,ul {
 .skill-card { background: var(--secondary-bg); border-radius: 15px; overflow: hidden; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.05); display: flex; cursor:pointer;}
 .skill-card:hover { transform: translateY(-10px); border-color: var(--accent); }
 .skill-card:hover i { color: var(--accent); }
-.skill-card i { transition: color 0.4s ease;}
+.skill-card i { transition: color 0.4s ease; font-size: 40px;}
+
+.skill-card .col-4 { display:flex; align-items:center; justify-content:center; }
+.skill-card h5 { font-size: 1.15rem; margin: 0 0 0.25rem 0; text-align: left; }
+.skill-card p { font-size: 0.95rem; margin: 0; text-align: justify; color: #cbd5e1; }
 
 .light {
     .bg-darker {
