@@ -216,13 +216,6 @@ li,ul {
         --content-width: 19rem;
         --card-height: 28rem;
     }
-
-    .navbar {
-        width: 70%;
-        margin: 10px auto;
-        border-radius: 100px;
-        /* height: 1rem; */
-    }
 }
 
 @media (max-width: 576px) {
@@ -443,7 +436,7 @@ li,ul {
   width: 300%;
 }
 
-.skill-card { background: var(--secondary-bg); border-radius: 15px; overflow: hidden; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.05); display: flex; cursor:pointer;}
+.skill-card { background: var(--secondary-bg); border-radius: 15px; overflow: hidden; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.05); display: flex; cursor:pointer;min-height: 250px;}
 .skill-card:hover { transform: translateY(-10px); border-color: var(--accent); }
 .skill-card:hover i { color: var(--accent); }
 .skill-card i { transition: color 0.4s ease; font-size: 40px;}
@@ -456,4 +449,8 @@ li,ul {
     .bg-darker {
         background-color: #f2faff;
     }
+}
+
+#hobbies, #home {
+    min-height: 100vh;
 }
