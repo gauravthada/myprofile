@@ -9,16 +9,21 @@
     --text-muted: #94a3b8;
     --color-surface-white: #ffffff;
     --color-just-black: #000000;
+    --nav-bg: #071e37;
     --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
     .light {
         --primary-bg: #e1eaff;
-        --secondary-bg: #abc3eb;
-        --accent: #178bbc;
-        --accent-hover: #04567c;
+        --secondary-bg: #d4e1ff;
+        --accent: #00b3ff;
+        --accent-hover: #00aeff;
         --text-main: #041221;
         --text-muted: #24272a;
-        p {
+        --nav-bg: #aabfec;
+        p, h1, h2, h3, h4, h5, h6, a:not(#projects *), li, ul, #contact button{
             color: var(--text-main)!important;
+        }
+        .nav * {
+            color: white!important;
         }
     }
 }
@@ -27,8 +32,6 @@ html, body {
     width: 100%;
     overflow-x: hidden;
     position: relative;
-    /* This prevents the browser from trying to "fit" 
-       elements during the animation phase */
     margin: 0;
     padding: 0;
 }
@@ -52,6 +55,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
 #home {
     overflow: hidden;
     width: 100%;
+    /* padding-left: 250px; */
 }
 
 a {
@@ -97,8 +101,17 @@ li,ul {
     }
 } */
 
+@media only screen and (min-width: 577px) and (max-width: 991px) {
+  .hero-img-wrapper {
+    width: 60vw;
+    height: auto;
+    margin-top: 80px;
+  }
+}
+
+
 .navbar {
-    background: rgba(15, 23, 42, 0.75);
+    background: var(--nav-bg);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
@@ -106,7 +119,7 @@ li,ul {
 }
 
 .nav-link {
-    color: var(--text-main) !important;
+    color: var(--text-main);
      font-family:Arial;
      font-size:18px;
     margin-left: 1rem;
@@ -243,6 +256,25 @@ li,ul {
         min-height: 150vh;
         overflow-y: auto;
     }
+    #home {
+        padding-left: 0px;
+        padding-top: 100px!important;
+    }
+}
+
+#contact button, #about button {
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#contact button:hover, #about button:hover {
+    background: var(--accent);
+    color: var(--primary-bg);
+    border: 1px solid var(--accent);
 }
 
 .cards { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
@@ -349,91 +381,6 @@ li,ul {
 .divider {
     border-bottom: 1px solid silver;
     width: 90%!important;
-}
-
-.button {
-  align-items: center;
-  background: 0 0;
-  border: none;
-  border-radius: 6.25rem;
-  color: var(--text-primary); 
-  cursor: pointer;
-  display: inline-flex;
-  font-size: var(--fs-body);
-  font-weight: 500;
-  gap: 0.4em;
-  justify-content: center;
-  letter-spacing: -0.01em;
-  line-height: 1.05;
-  overflow: hidden;
-  padding: 1rem 1.5rem;
-  position: relative;
-  word-break: break-word;
-  text-decoration: none;
-  font-family: var(--main-text);
-}
-
-.button--stroke {
-    color: var(--text-primary);
-}
-
-@media (hover: hover) {
-  .button.button--stroke:hover {
-    color: var(--bg-color)!important;
-    text-decoration: none;
-  }
-}
-
-.button--stroke:after {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  border: 0.125rem solid var(--accent);
-  border-radius: 6.25rem;
-  content: "";
-  pointer-events: none;
-}
-
-.button__label {
-  position: relative;
-  text-align: center;
-  transition: color 50ms ease-in-out; 
-}
-
-.button--stroke:hover .button__label {
-  transition: color 0.15s ease-in-out;
-  color: black;
-}
-
-.button__flair {
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.button--stroke .button__flair {
-  transform: scale(0);
-  transform-origin: 0 0;
-  will-change: transform;
-}
-
-.button__flair:before {
-  aspect-ratio: 1/1;
-  background-color: var(--accent);
-  border-radius: 50%;
-  content: "";
-  display: block;
-  left: 0;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  transform: translate(-50%, -50%);
-  width: 300%;
 }
 
 .skill-card { background: var(--secondary-bg); border-radius: 15px; overflow: hidden; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.05); display: flex; cursor:pointer;min-height: 250px;}
